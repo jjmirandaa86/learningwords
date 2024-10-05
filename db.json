@@ -1,0 +1,24 @@
+{
+    "users": [
+        { "id": 1, "name": "admin", "passwd": "admin"   },
+        { "id": 2, "name": "jjmirandaa86", "passwd": "jjma"   }
+    ],
+    "list": {
+        "words": [
+            {
+			"id": 1,
+			"category": "NOUN",
+			"word": "Housed",
+			"meaning": "It is a place where people live",
+			"example": [
+				"The house is beautiful.",
+				"This house is mine.",
+				"I prefer staying in my house."
+			],
+			"association": [], 
+			"img": "",
+			"status": "F"
+		    }
+        ]
+    }
+}
