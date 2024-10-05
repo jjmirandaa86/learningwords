@@ -6,8 +6,8 @@ https://www.prdenglish.acertijo.dev/
 
 ## production Link
 
-![Screenshot WebSite - Main ](https://www.prdenglish.acertijo.dev/img/screenshot/main.png)
+<a href="https://www.prdenglish.acertijo.dev/img/screenshot/main.png" target="blank"><img align="center" src="https://www.prdenglish.acertijo.dev/img/screenshot/main.png" alt="Main website" height="400" width="400" /></a>
 
-![Screenshot WebSite - Add ](https://www.prdenglish.acertijo.dev/img/screenshot/add.png)
+<a href="https://www.prdenglish.acertijo.dev/img/screenshot/add.png" target="blank"><img align="center" src="https://www.prdenglish.acertijo.dev/img/screenshot/add.png" alt="Main website" height="400" width="400" /></a>
 
-![Screenshot WebSite - List](https://www.prdenglish.acertijo.dev/img/screenshot/list.png)
+<a href="https://www.prdenglish.acertijo.dev/img/screenshot/list.png" target="blank"><img align="center" src="https://www.prdenglish.acertijo.dev/img/screenshot/list.png" alt="Main website" height="400" width="400" /></a>
