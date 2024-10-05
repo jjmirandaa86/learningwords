@@ -1,6 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Projects to learn words that you want to achieve to learn.
+
+This project is that you can add target words. You could use in your routine and you remember so easy when you are taking with someone.
 
 https://www.prdenglish.acertijo.dev/
 
