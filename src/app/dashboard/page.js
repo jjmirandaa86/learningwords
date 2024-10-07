@@ -1,22 +1,14 @@
 "use client";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import UserLogin from "../../Components/General/UserLogin";
+import NavigationHeader from "../../Components/General/NavigationHeader";
 import Words from "../../Components/General/Words";
 import KpiLearnWords from "../../Components/Graphics/KpiLearnWords";
 
 const page = () => {
 	return (
 		<>
-			<UserLogin
-				data={[
-					{
-						id: 1,
-						title: "Dashboard",
-						url: "/dashboard",
-					},
-				]}
-			/>
+			<NavigationHeader />
 			<Container>
 				<Row>
 					<Row>

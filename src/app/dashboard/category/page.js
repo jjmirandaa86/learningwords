@@ -1,19 +1,14 @@
 import React from "react";
-import UserLogin from "../../../Components/General/UserLogin";
+import NavigationHeader from "../../../Components/General/NavigationHeader";
 
 const page = () => {
 	return (
 		<>
-			<UserLogin
-				data={[
-					{
-						id: 1,
-						title: "Dashboard",
-						url: "/dashboard",
-					},
-				]}
-			/>
-			category page
+			<div>
+				<NavigationHeader />
+				<h1>Page category</h1>
+				<h2>Ongoing development</h2>
+			</div>
 		</>
 	);
 };

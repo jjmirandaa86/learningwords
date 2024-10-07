@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import { FaRectangleList } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
-import PaginationControl from "./PaginationControl";
+import PaginationControl from "./PaginationControl.js";
 
 const Words = ({ list = {}, title = "" }) => {
 	return (
