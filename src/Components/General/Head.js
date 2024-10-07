@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
-import { FaBookReader } from "react-icons/fa";
+import Logo from "../General/Logo";
 
 const Head = ({ user }) => {
 	return (
-		<div>
+		<>
 			<Navbar className="bg-body-tertiary">
 				<Container>
 					<Navbar.Brand href="#home">
-						<FaBookReader /> Learning words
+						<Logo />
 					</Navbar.Brand>
 					<Navbar.Toggle />
 					<Navbar.Collapse className="justify-content-end">
@@ -18,7 +18,7 @@ const Head = ({ user }) => {
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
-		</div>
+		</>
 	);
 };
 

@@ -3,7 +3,7 @@ import { Pagination } from "react-bootstrap";
 
 const PaginationControl = () => {
 	return (
-		<>
+		<div className="p-3">
 			<h6>Showing: 1 to 10</h6>
 			<div className="d-flex justify-content-center">
 				<Pagination>
@@ -19,7 +19,7 @@ const PaginationControl = () => {
 					<Pagination.Last />
 				</Pagination>
 			</div>
-		</>
+		</div>
 	);
 };
 

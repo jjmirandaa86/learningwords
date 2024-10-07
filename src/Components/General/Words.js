@@ -1,18 +1,10 @@
 import React from "react";
-import {
-	Container,
-	Card,
-	CardBody,
-	ListGroup,
-	Button,
-	Row,
-	Col,
-} from "react-bootstrap";
+import { Card, CardBody, ListGroup, Button, Row, Col } from "react-bootstrap";
 import { FaRectangleList } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import PaginationControl from "./PaginationControl.js";
 
-const Words = ({ list = {}, title = "" }) => {
+const Words = ({ list = [], title = "" }) => {
 	return (
 		<>
 			<Card>
@@ -20,83 +12,28 @@ const Words = ({ list = {}, title = "" }) => {
 					<Card.Title>
 						<FaRectangleList /> {title}
 					</Card.Title>
-					<ListGroup variant="flush">
-						<ListGroup.Item action onClick={() => {}}>
-							<Row>
-								<Col xs sm={2}>
-									{"1"}
-								</Col>
-								<Col xs sm={8}>
-									{"House"}
-								</Col>
-								<Col xs sm={2}>
-									<Button variant="primary" size="sm">
-										<FaStar />
-									</Button>
-								</Col>
-							</Row>
-						</ListGroup.Item>
-						<ListGroup.Item action onClick={() => {}}>
-							<Row>
-								<Col xs sm={2}>
-									{"1"}
-								</Col>
-								<Col xs sm={8}>
-									{"House"}
-								</Col>
-								<Col xs sm={2}>
-									<Button variant="primary" size="sm">
-										<FaStar />
-									</Button>
-								</Col>
-							</Row>
-						</ListGroup.Item>
-						<ListGroup.Item action onClick={() => {}}>
-							<Row>
-								<Col xs sm={2}>
-									{"1"}
-								</Col>
-								<Col xs sm={8}>
-									{"House"}
-								</Col>
-								<Col xs sm={2}>
-									<Button variant="primary" size="sm">
-										<FaStar />
-									</Button>
-								</Col>
-							</Row>
-						</ListGroup.Item>
-						<ListGroup.Item action onClick={() => {}}>
-							<Row>
-								<Col xs sm={2}>
-									{"1"}
-								</Col>
-								<Col xs sm={8}>
-									{"House"}
-								</Col>
-								<Col xs sm={2}>
-									<Button variant="primary" size="sm">
-										<FaStar />
-									</Button>
-								</Col>
-							</Row>
-						</ListGroup.Item>
-						<ListGroup.Item action onClick={() => {}}>
-							<Row>
-								<Col xs sm={2}>
-									{"1"}
-								</Col>
-								<Col xs sm={8}>
-									{"House"}
-								</Col>
-								<Col xs sm={2}>
-									<Button variant="primary" size="sm">
-										<FaStar />
-									</Button>
-								</Col>
-							</Row>
-						</ListGroup.Item>
-					</ListGroup>
+					{list.length === 0 ? "No items" : ""}
+					{list.length !== 0 ? (
+						<ListGroup variant="flush">
+							{list.map((item, index) => (
+								<ListGroup.Item key={index} action onClick={() => {}}>
+									<Row>
+										<Col xs={2} sm={1}>
+											<Button variant="primary" size="sm">
+												<FaStar />
+											</Button>
+										</Col>
+										<Col xs={10} sm={11}>
+											{item.word}
+										</Col>
+									</Row>
+								</ListGroup.Item>
+							))}
+						</ListGroup>
+					) : (
+						""
+					)}
+
 					<PaginationControl />
 				</CardBody>
 			</Card>

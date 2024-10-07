@@ -6,6 +6,18 @@ import Words from "../../Components/General/Words";
 import KpiLearnWords from "../../Components/Graphics/KpiLearnWords";
 
 const page = () => {
+	const list = [
+		{ id: 1, word: "House" },
+		{ id: 2, word: "nevertheless" },
+		{ id: 3, word: "futermore" },
+		{ id: 4, word: "polite" },
+		{ id: 5, word: "Sing" },
+		{ id: 6, word: "Menu" },
+		{ id: 7, word: "deal" },
+		{ id: 8, word: "bite" },
+		{ id: 9, word: "blow" },
+		{ id: 10, word: "provider" },
+	];
 	return (
 		<>
 			<NavigationHeader />
@@ -13,7 +25,7 @@ const page = () => {
 				<Row>
 					<Row>
 						<Col sm={8}>
-							<Words list={{}} title="List favorite words" />
+							<Words list={list} title="List favorite words" />
 						</Col>
 						<Col sm={4}>
 							<h1>Kpi</h1>
