@@ -1,15 +1,16 @@
+"use client";
 import React from "react";
-import {
-	Container,
-	ListGroup,
-	Button,
-	SplitButton,
-	Dropdown,
-} from "react-bootstrap";
+import { usePathname } from "next/navigation";
+import { SplitButton, Dropdown } from "react-bootstrap";
 import { FaPlusCircle, FaThList, FaChartBar } from "react-icons/fa";
 import { FaDoorClosed, FaListUl } from "react-icons/fa6";
 
 const Menu = () => {
+	const pathname = usePathname();
+	const splitUrl = pathname.split("/");
+	//to control navigation if i am in top or not
+	const url = splitUrl.length === 2 ? "dashboard" : "../dashboard";
+
 	return (
 		<>
 			<SplitButton
@@ -18,17 +19,17 @@ const Menu = () => {
 				title="Menu"
 				size="sm"
 			>
-				<Dropdown.Item eventKey="1" href="dashboard/add">
+				<Dropdown.Item eventKey="1" href={`${url}/add`}>
 					<FaPlusCircle /> Add
 				</Dropdown.Item>
-				<Dropdown.Item eventKey="2" href="dashboard/list">
+				<Dropdown.Item eventKey="2" href={`${url}/list`}>
 					<FaListUl /> List
 				</Dropdown.Item>
-				<Dropdown.Item eventKey="3" href="dashboard/category">
+				<Dropdown.Item eventKey="3" href={`${url}/category`}>
 					<FaThList /> Category
 				</Dropdown.Item>
 				<Dropdown.Divider />
-				<Dropdown.Item eventKey="4" href="dashboard/graphics">
+				<Dropdown.Item eventKey="4" href={`${url}/graphics`}>
 					<FaChartBar /> Graphics
 				</Dropdown.Item>
 				<Dropdown.Divider />
