@@ -2,22 +2,25 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import NavigationHeader from "../../Components/General/NavigationHeader";
-import Words from "../../Components/General/Words";
+import ListGrid from "../../Components/General/ListGrid";
 import KpiLearnWords from "../../Components/Graphics/KpiLearnWords";
 
 const page = () => {
 	const list = [
-		{ id: 1, word: "House" },
-		{ id: 2, word: "nevertheless" },
-		{ id: 3, word: "futermore" },
-		{ id: 4, word: "polite" },
-		{ id: 5, word: "Sing" },
-		{ id: 6, word: "Menu" },
-		{ id: 7, word: "deal" },
-		{ id: 8, word: "bite" },
-		{ id: 9, word: "blow" },
-		{ id: 10, word: "provider" },
+		{ id: 1, word: "House", category: "noun" },
+		{ id: 2, word: "nevertheless", category: "connector" },
+		{ id: 3, word: "furthermore", category: "connector" },
+		{ id: 4, word: "polite", category: "adjective" },
+		{ id: 5, word: "Sing", category: "noun" },
+		{ id: 6, word: "Menu", category: "noun" },
+		{ id: 7, word: "deal", category: "adjective" },
+		{ id: 8, word: "bite", category: "verb" },
+		{ id: 9, word: "blow", category: "verb" },
+		{ id: 10, word: "provider", category: "adjective" },
 	];
+
+	const type = "w";
+
 	return (
 		<>
 			<NavigationHeader />
@@ -25,7 +28,7 @@ const page = () => {
 				<Row>
 					<Row>
 						<Col sm={8}>
-							<Words list={list} title="List favorite words" />
+							<ListGrid list={list} title="List favorite words" type={type} />
 						</Col>
 						<Col sm={4}>
 							<h1>Kpi</h1>
