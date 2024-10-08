@@ -28,9 +28,9 @@ const OnlyWords = ({ list, title }) => {
 								<ListGroup.Item key={index} action onClick={() => {}}>
 									<Row>
 										<Col xs={2} sm={1}>
-											<Button variant="primary" size="sm">
+											<h5>
 												<FaStar />
-											</Button>
+											</h5>
 										</Col>
 										<Col xs={10} sm={11}>
 											{item.word}
@@ -75,9 +75,7 @@ const OnlyCategory = ({ list, title }) => {
 								<ListGroup.Item key={index} action onClick={() => {}}>
 									<Row>
 										<Col xs={2} sm={1}>
-											<Button variant="primary" size="sm">
-												<FaStar />
-											</Button>
+											<FaStar />
 										</Col>
 										<Col xs={10} sm={11}>
 											{item}

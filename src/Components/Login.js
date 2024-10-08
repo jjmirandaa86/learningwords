@@ -21,41 +21,40 @@ const Login = () => {
 								</Card.Header>
 								<Card.Body>
 									<Card.Title>Login</Card.Title>
-									<Card.Text>
-										<Row>
-											<Col>
-												<Form.Group className="mb-3" controlId="formGroupEmail">
-													<Form.Label>Email</Form.Label>
-													<Form.Control type="email" placeholder="Enter email" />
-												</Form.Group>
-											</Col>
-										</Row>
-										<Row>
-											<Col>
-												<Form.Group className="mb-3" controlId="formGroupPassword">
-													<Form.Label>Password</Form.Label>
-													<Form.Control type="password" placeholder="Password" />
-												</Form.Group>
-											</Col>
-										</Row>
-										<Row>
-											<Col>
-												<Form.Group className="mb-3" controlId="formGroupPassword">
-													<i>
-														<strong>Credential Testing:</strong>
-														User: admin Password: admin
-													</i>
-												</Form.Group>
-											</Col>
-										</Row>
-										<Row className="text-center">
-											<Col>
-												<Button variant="primary" size="sm" href="/dashboard">
-													Login
-												</Button>
-											</Col>
-										</Row>
-									</Card.Text>
+									<Row>
+										<Col>
+											<Form.Group className="mb-3" controlId="formGroupEmail">
+												<Form.Label>Email</Form.Label>
+												<Form.Control type="email" placeholder="Enter email" />
+											</Form.Group>
+										</Col>
+									</Row>
+
+									<Row>
+										<Col>
+											<Form.Group className="mb-3" controlId="formGroupPassword">
+												<Form.Label>Password</Form.Label>
+												<Form.Control type="password" placeholder="Password" />
+											</Form.Group>
+										</Col>
+									</Row>
+									<Row>
+										<Col>
+											<Form.Group className="mb-3" controlId="formGroupPassword">
+												<i>
+													<strong>Credential Testing:</strong>
+													User: admin Password: admin
+												</i>
+											</Form.Group>
+										</Col>
+									</Row>
+									<Row className="text-center">
+										<Col>
+											<Button variant="primary" size="sm" href="/dashboard">
+												Login
+											</Button>
+										</Col>
+									</Row>
 								</Card.Body>
 								<Card.Footer className="text-muted">Ongoing development</Card.Footer>
 							</Card>
