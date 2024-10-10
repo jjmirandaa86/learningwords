@@ -1,17 +1,15 @@
-// import the Request and Response classes
+// import { NextResponse, NextRequest } from 'next/server'
 
-import { NextResponse, NextRequest } from 'next/server'
+// const getzzz = (request: request) =>{
+//   const results = {
+//     message: 'This is version 1.0 of api',
+//   }
+//   return NextResponse.json(results)
+// }
 
-// define and export the GET handler function
+// export default getzzz;
 
-export async function GET(request: Request) {
-  // this is going to be my JSON response
 
-  const results = {
-    message: 'This is version 1.0 of api',
-  }
-
-  // response with the JSON object
-
-  return NextResponse.json(results)
+export default function handler(req, res) {
+	res.status(200).json({ name: "John Doe" });
 }

@@ -1,10 +1,20 @@
 import React from "react";
 import { FaBookReader } from "react-icons/fa";
+import {
+	styleBlue,
+	styleOrange,
+	styleBlack,
+	styleWhite,
+	styleYellow,
+} from "../../Styles/generalStyles";
 
 const Logo = () => {
 	return (
-		<div>
-			<FaBookReader /> Learning words
+		<div className="p-1 h1">
+			<span>
+				<FaBookReader size={20} /> <strong>Learning</strong>
+				<>Words</>
+			</span>
 		</div>
 	);
 };
