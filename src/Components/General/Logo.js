@@ -12,7 +12,7 @@ const Logo = () => {
 	return (
 		<div className="p-1 h1">
 			<span>
-				<FaBookReader size={20} /> <strong>Learning</strong>
+				<FaBookReader size={25} color={styleOrange} /> <strong>Learning</strong>
 				<>Words</>
 			</span>
 		</div>

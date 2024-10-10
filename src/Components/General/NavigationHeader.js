@@ -3,7 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { Breadcrumb, Row, Col } from "react-bootstrap";
-
+import { upperCaseFirstLetter } from "../../javascript/generalFunctions";
 const NavigationHeader = () => {
 	const pathname = usePathname();
 	const editor = pathname.split("/");
@@ -19,7 +19,7 @@ const NavigationHeader = () => {
 									key={index}
 									href={"../".repeat(editor.length - 1 - index) + el}
 								>
-									{el}{" "}
+									{upperCaseFirstLetter(el)}{" "}
 								</Breadcrumb.Item>
 							) : (
 								""
