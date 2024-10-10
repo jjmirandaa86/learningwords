@@ -2,5 +2,6 @@
   "/page": "app/page.js",
   "/dashboard/page": "app/dashboard/page.js",
   "/dashboard/add/page": "app/dashboard/add/page.js",
+  "/dashboard/list/page": "app/dashboard/list/page.js",
   "/dashboard/category/page": "app/dashboard/category/page.js"
 }

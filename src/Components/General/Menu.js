@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { DropdownButton, Dropdown } from "react-bootstrap";
+import { DropdownButton, Dropdown, Nav, ListGroup } from "react-bootstrap";
 import { FaPlusCircle, FaThList, FaChartBar, FaHome } from "react-icons/fa";
 import { FaDoorClosed, FaListUl } from "react-icons/fa6";
 
@@ -12,36 +12,38 @@ const Menu = () => {
 	const url = splitUrl.length === 2 ? "dashboard" : "../dashboard";
 
 	return (
-		<>
-			<DropdownButton
-				id={`dropdown-split-variants-primary`}
-				variant="primary"
-				title="Menu"
-				size="sm"
-			>
-				<Dropdown.Item eventKey="1" href={`${url}/`}>
+		<div style={{ padding: 10 }}>
+			<ListGroup>
+				<ListGroup.Item action href={`${url}/`} variant="dark">
+					{" "}
 					<FaHome /> Dashboard
-				</Dropdown.Item>
-				<Dropdown.Divider />
-				<Dropdown.Item eventKey="1" href={`${url}/add`}>
+				</ListGroup.Item>
+				<hr></hr>
+				<ListGroup.Item action href={`${url}/add`} style={{ marginLeft: 20 }}>
+					{" "}
 					<FaPlusCircle /> Add
-				</Dropdown.Item>
-				<Dropdown.Item eventKey="2" href={`${url}/list`}>
+				</ListGroup.Item>
+				<ListGroup.Item action href={`${url}/list`} style={{ marginLeft: 20 }}>
+					{" "}
 					<FaListUl /> List
-				</Dropdown.Item>
-				<Dropdown.Item eventKey="3" href={`${url}/category`}>
+				</ListGroup.Item>
+
+				<ListGroup.Item action href={`${url}/category`} style={{ marginLeft: 20 }}>
+					{" "}
 					<FaThList /> Category
-				</Dropdown.Item>
-				<Dropdown.Divider />
-				<Dropdown.Item eventKey="4" href={`${url}/graphics`}>
+				</ListGroup.Item>
+				<hr></hr>
+				<ListGroup.Item action href={`${url}/graphics`}>
+					{" "}
 					<FaChartBar /> Graphics
-				</Dropdown.Item>
-				<Dropdown.Divider />
-				<Dropdown.Item eventKey="4" href="/">
+				</ListGroup.Item>
+				<hr></hr>
+				<ListGroup.Item action href={`/`}>
+					{" "}
 					<FaDoorClosed /> Exit
-				</Dropdown.Item>
-			</DropdownButton>
-		</>
+				</ListGroup.Item>
+			</ListGroup>
+		</div>
 	);
 };
 

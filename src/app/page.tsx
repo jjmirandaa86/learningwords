@@ -10,10 +10,11 @@ export default function Home() {
         background: "linear-gradient(to bottom, #121f1d, #0b5871, #eda800)", 
         width: "100%",
         margin: "0", 
-        padding: "0", 
-        display: "flex", 
+        paddingTop: "100px", 
+        paddingBottom: "100px",
+        display: "relative", 
         height: "100%" 
-        }}>
+        }} className="">
         <Login />
 
       </div>
