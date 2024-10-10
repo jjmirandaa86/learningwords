@@ -2,7 +2,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { SplitButton, Dropdown } from "react-bootstrap";
-import { FaPlusCircle, FaThList, FaChartBar } from "react-icons/fa";
+import { FaPlusCircle, FaThList, FaChartBar, FaHome } from "react-icons/fa";
 import { FaDoorClosed, FaListUl } from "react-icons/fa6";
 
 const Menu = () => {
@@ -19,6 +19,10 @@ const Menu = () => {
 				title="Menu"
 				size="sm"
 			>
+				<Dropdown.Item eventKey="1" href={`${url}/`}>
+					<FaHome /> Dashboard
+				</Dropdown.Item>
+				<Dropdown.Divider />
 				<Dropdown.Item eventKey="1" href={`${url}/add`}>
 					<FaPlusCircle /> Add
 				</Dropdown.Item>

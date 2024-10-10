@@ -3,7 +3,7 @@
 import React from "react";
 import { usePathname } from "next/navigation";
 import { Breadcrumb, Row, Col } from "react-bootstrap";
-import Menu from "@/Components/General/Menu";
+import Menu from "../General/Menu";
 
 const NavigationHeader = () => {
 	const pathname = usePathname();
