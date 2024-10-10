@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { SplitButton, Dropdown } from "react-bootstrap";
+import { DropdownButton, Dropdown } from "react-bootstrap";
 import { FaPlusCircle, FaThList, FaChartBar, FaHome } from "react-icons/fa";
 import { FaDoorClosed, FaListUl } from "react-icons/fa6";
 
@@ -13,7 +13,7 @@ const Menu = () => {
 
 	return (
 		<>
-			<SplitButton
+			<DropdownButton
 				id={`dropdown-split-variants-primary`}
 				variant="primary"
 				title="Menu"
@@ -40,7 +40,7 @@ const Menu = () => {
 				<Dropdown.Item eventKey="4" href="/">
 					<FaDoorClosed /> Exit
 				</Dropdown.Item>
-			</SplitButton>
+			</DropdownButton>
 		</>
 	);
 };
