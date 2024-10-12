@@ -13,22 +13,10 @@ export default function Home() {
   }, 3000);
 
   return (
-    <>
-      {page &&  
-          <div style={{
-            background: "linear-gradient(to bottom, #121f1d, #0b5871, #eda800)", 
-            width: "100%",
-            margin: "0", 
-            paddingTop: "100px", 
-            paddingBottom: "100px",
-            display: "relative", 
-            height: "" 
-            }} className="">
-              <Login />
-          </div>
-      }
+    <div>
+      {page && <Login /> }
 
       {!page && <LoadingWeb />}  
-    </>
+    </div>
   );
 }

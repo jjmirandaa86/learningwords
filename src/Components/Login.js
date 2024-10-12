@@ -10,12 +10,20 @@ import {
 	styleWhite,
 	styleYellow,
 } from "../Styles/generalStyles";
-import TextGradient from "../Components/General/TextGradient";
 
 const Login = () => {
 	return (
-		<div style={{}}>
-			<div className="text-center display-1 p-4">
+		<div
+			style={{
+				height: "100vh",
+				background: "linear-gradient(to bottom, #121f1d, #0b5871, #eda800)",
+				margin: "0",
+			}}
+		>
+			<div
+				className="text-center"
+				style={{ paddingTop: "80px", paddingBottom: "50px" }}
+			>
 				<FaBookReader size={100} color={styleOrange} />
 			</div>
 			<Container>

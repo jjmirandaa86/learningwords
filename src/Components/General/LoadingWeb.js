@@ -53,15 +53,10 @@ const LoadingWeb = () => {
 	};
 
 	return (
-		<div style={{ height: "100vh" }}>
+		<div style={{ height: "100vh", backgroundColor: "#121f1d", margin: "0" }}>
 			<div
 				style={{
-					backgroundColor: "#121f1d",
-					width: "100%",
-					margin: "0",
 					paddingTop: "100px",
-					paddingBottom: "100px",
-					height: "100%",
 					color: "white",
 				}}
 			>
@@ -84,7 +79,7 @@ const LoadingWeb = () => {
 					</Row>
 					<Row>
 						<Col></Col>
-						<Col xs={10} sm={8} md={8} lg={6}>
+						<Col xs={12} sm={8} md={8} lg={6}>
 							<div style={{ display: "flex", alignItems: "center" }}>
 								<img src={"svg/pacman.svg"} alt="React Logo" />
 								<Marquee speed={150}>
