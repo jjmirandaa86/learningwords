@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 60 100" 
+    preserveAspectRatio="xMidYMid" 
+    style="shape-rendering: auto; display: block; background: transparent;" 
+    width="200" height="200" 
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <g transform="translate(0 0)" 
+        fill="rgba(10, 150, 20, 0.5)" 
+    >
+      <path 
+        transform="rotate(90 50 50)" 
+        fill="#eda800" 
+        d="M50 50L20 50A30 30 0 0 0 80 50Z">
+      </path>
+      <path fill="#eda800" 
+      d="M50 50L20 50A30 30 0 0 1 80 50Z">
+        <animateTransform 
+          keyTimes="0;0.5;1" 
+          values="0 50 50;-45 50 50;0 50 50" 
+          dur="0.6802721088435374s" 
+          repeatCount="indefinite" 
+          type="rotate" 
+          attributeName="transform">
+        </animateTransform>
+      </path>
+      <path fill="#eda800" 
+            d="M50 50L20 50A30 30 0 0 0 80 50Z">
+        <animateTransform 
+          keyTimes="0;0.5;1" 
+          values="0 50 50;45 50 50;0 50 50" 
+          dur="0.6802721088435374s" 
+          repeatCount="indefinite" 
+          type="rotate" 
+          attributeName="transform">
+        </animateTransform>
+      </path>
+    </g>
+    <g></g>
+  </g>
+</svg>

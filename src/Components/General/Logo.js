@@ -10,7 +10,7 @@ import {
 
 const Logo = () => {
 	return (
-		<div className="p-1 h1">
+		<div className="p-1 h1 text-center">
 			<span>
 				<FaBookReader size={25} color={styleOrange} /> <strong>Learning</strong>
 				<>Words</>

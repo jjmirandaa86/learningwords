@@ -10,6 +10,7 @@ import {
 	styleWhite,
 	styleYellow,
 } from "../Styles/generalStyles";
+import TextGradient from "../Components/General/TextGradient";
 
 const Login = () => {
 	return (
