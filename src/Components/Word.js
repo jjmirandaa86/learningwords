@@ -76,8 +76,8 @@ const Word = ({ word = null }) => {
 					{/* EXAMPLES */}
 					<h4>
 						<ul>
-							{data.example.map((example) => (
-								<li>
+							{data.example.map((example, index) => (
+								<li key={index}>
 									<h6>{example}</h6>
 								</li>
 							))}
@@ -88,8 +88,8 @@ const Word = ({ word = null }) => {
 						<Col>
 							<h4>
 								<ul>
-									{data.synonyms.map((el) => (
-										<li>
+									{data.synonyms.map((el, index) => (
+										<li key={index}>
 											<h6>{el}</h6>
 										</li>
 									))}
@@ -100,8 +100,8 @@ const Word = ({ word = null }) => {
 						<Col>
 							<h4>
 								<ul>
-									{data.antonyms.map((el) => (
-										<li>
+									{data.antonyms.map((el, index) => (
+										<li key={index}>
 											<h6>{el}</h6>
 										</li>
 									))}

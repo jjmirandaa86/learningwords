@@ -1,4 +1,4 @@
-import { AppDataSource } from "../../../../data-source";
+import { AppDataSource } from "./data-source";
 
 const connect = AppDataSource.initialize()
 	.then(() => connect)

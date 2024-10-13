@@ -43,6 +43,7 @@ const OnlyWords = ({ list, title }) => {
 									variant=""
 									href={"/dashboard/word/" + FirstLetterUpperCase(item.word)}
 									onClick={() => {}}
+									key={index}
 								>
 									<Row>
 										<Col xs={2} sm={1}>
@@ -82,7 +83,7 @@ const OnlyCategory = ({ list, title }) => {
 	return (
 		<>
 			<Card>
-				<CardBody>
+				<Card.Body>
 					<Card.Title>
 						<FaRectangleList /> {title}
 					</Card.Title>
@@ -107,7 +108,7 @@ const OnlyCategory = ({ list, title }) => {
 					)}
 
 					<PaginationControl />
-				</CardBody>
+				</Card.Body>
 			</Card>
 		</>
 	);

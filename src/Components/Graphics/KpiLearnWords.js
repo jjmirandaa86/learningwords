@@ -1,9 +1,10 @@
 import React from "react";
-import Model from "../Graphics/Model";
+import PieChart from "../Graphics/PieChart";
+
 const KpiLearnWords = () => {
 	return (
 		<div>
-			<Model></Model>
+			<PieChart></PieChart>
 		</div>
 	);
 };
