@@ -26,17 +26,13 @@ const page = () => {
 			<NavigationHeader />
 			<Container>
 				<Row>
-					<Row>
-						<Col sm={8}>
-							<ListGrid list={list} title="List favorite words" type={type} />
-						</Col>
-						<Col sm={4}>
-							<h1>Kpi</h1>
-							<KpiLearnWords />
-						</Col>
-					</Row>
-					<Col></Col>
-					<Col xs sm={4}></Col>
+					<Col xs={12} sm={12} md={8} lg={6}>
+						<ListGrid list={list} title="List favorite words" type={type} />
+					</Col>
+					<Col>
+						<h1>Kpi</h1>
+						<KpiLearnWords />
+					</Col>
 				</Row>
 			</Container>
 		</>

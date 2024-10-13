@@ -7,16 +7,31 @@ import ListGrid from "../../../Components/General/ListGrid";
 
 const page = () => {
 	const list = [
-		{ id: 1, word: "House", category: "noun" },
-		{ id: 2, word: "nevertheless", category: "connector" },
-		{ id: 3, word: "furthermore", category: "connector" },
-		{ id: 4, word: "polite", category: "adjective" },
-		{ id: 5, word: "Sing", category: "noun" },
-		{ id: 6, word: "Menu", category: "noun" },
-		{ id: 7, word: "deal", category: "adjective" },
-		{ id: 8, word: "bite", category: "verb" },
-		{ id: 9, word: "blow", category: "verb" },
-		{ id: 10, word: "provider", category: "adjective" },
+		{
+			id: 1,
+			word: "House",
+			type: "noun",
+			category: "The 100 verb, ypu need know.",
+		},
+		{ id: 2, word: "nevertheless", type: "connector", category: "connector" },
+		{ id: 3, word: "furthermore", type: "connector", category: "connector" },
+		{ id: 4, word: "polite", type: "adjective", category: "idioms" },
+		{ id: 5, word: "Sing", type: "noun", category: "Basic English" },
+		{ id: 6, word: "Menu", type: "noun", category: "noun" },
+		{ id: 7, word: "deal", type: "adjective", category: "adjective" },
+		{
+			id: 8,
+			word: "bite",
+			type: "verb",
+			category: "The 100 verb, ypu need know.",
+		},
+		{
+			id: 9,
+			word: "blow",
+			type: "verb",
+			category: "The 100 verb, ypu need know.",
+		},
+		{ id: 10, word: "provider", type: "adjective", category: "adjective" },
 	];
 
 	//w words / c category / cw category + word

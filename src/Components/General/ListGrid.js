@@ -1,14 +1,22 @@
 import React from "react";
-import { Card, CardBody, ListGroup, Button, Row, Col } from "react-bootstrap";
+import { Card, ListGroup, Button, Row, Col } from "react-bootstrap";
 import { FaRectangleList } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import PaginationControl from "./PaginationControl.js";
+import {
+	styleBlue,
+	styleBlack,
+	styleOrange,
+	styleYellow,
+	styleWhite,
+} from "../../Styles/generalStyles.js";
+import { FirstLetterUpperCase } from "../../javascript/generalFunctions.js";
 
 const ListGrid = ({ list = [], title = "", type = "w" }) => {
 	return (
 		<>
-			{type === "w" && <OnlyWords list={list} />}
-			{type === "c" && <OnlyCategory list={list} />}
+			{type === "w" && <OnlyWords list={list} title={title} />}
+			{type === "c" && <OnlyCategory list={list} title={title} />}
 		</>
 	);
 };
@@ -16,24 +24,34 @@ const ListGrid = ({ list = [], title = "", type = "w" }) => {
 const OnlyWords = ({ list, title }) => {
 	return (
 		<>
-			<Card>
-				<CardBody>
+			<Card
+				bg={"dark"}
+				text={"dark" === "light" ? "dark" : "white"}
+				border="warning"
+				className="border-5"
+			>
+				<Card.Body>
 					<Card.Title>
-						<FaRectangleList /> {title}
+						<FaRectangleList color={styleOrange} /> {title}
 					</Card.Title>
 					{list.length === 0 ? "No items" : ""}
 					{list.length !== 0 ? (
-						<ListGroup variant="flush">
+						<ListGroup variant="dark">
 							{list.map((item, index) => (
-								<ListGroup.Item key={index} action onClick={() => {}}>
+								<ListGroup.Item
+									action
+									variant=""
+									href={"/dashboard/word/" + FirstLetterUpperCase(item.word)}
+									onClick={() => {}}
+								>
 									<Row>
 										<Col xs={2} sm={1}>
 											<h5>
-												<FaStar />
+												<FaStar color={styleOrange} />
 											</h5>
 										</Col>
 										<Col xs={10} sm={11}>
-											{item.word}
+											{FirstLetterUpperCase(item.word)}
 										</Col>
 									</Row>
 								</ListGroup.Item>
@@ -44,7 +62,7 @@ const OnlyWords = ({ list, title }) => {
 					)}
 
 					<PaginationControl />
-				</CardBody>
+				</Card.Body>
 			</Card>
 		</>
 	);

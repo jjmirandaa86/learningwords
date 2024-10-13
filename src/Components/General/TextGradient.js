@@ -1,6 +1,11 @@
 import React from "react";
 
-const TextGradient = ({ color = "#eda800", size = "100px", text = "" }) => {
+const TextGradient = ({
+	color = "#eda800",
+	size = "100px",
+	text = "",
+	bold = false,
+}) => {
 	//<TextGradient color={"#eda800"} size={"100px"} text="Hello" />
 
 	return (
@@ -14,7 +19,7 @@ const TextGradient = ({ color = "#eda800", size = "100px", text = "" }) => {
 					fontSize: `${size}`,
 				}}
 			>
-				{text}
+				{bold ? <strong>{text}</strong> : { text }}
 			</div>
 		</div>
 	);
