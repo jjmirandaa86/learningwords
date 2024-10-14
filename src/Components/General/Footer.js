@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import Link from "next/link";
-import { Container, Navbar, Row, Col } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 import FooterDeveloperBy from "../General/FooterDeveloperBy";
-import moment from "moment";
+import { LongHour } from "../../javascript/generalFunctions";
 
 const Footer = () => {
-	const [date, setDate] = useState(moment().format("MMMM Do YYYY, h:mm:ss a"));
+	const [date, setDate] = useState(LongHour);
 
 	setInterval(() => {
-		setDate(moment().format("MMMM Do YYYY, h:mm:ss a"));
+		setDate(LongHour);
 	}, 1000);
 
 	return (

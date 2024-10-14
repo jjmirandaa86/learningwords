@@ -14,6 +14,7 @@ export default function Home() {
 
   return (
     <div>
+      
       {page && <Login /> }
       {!page && <LoadingWeb />}  
     </div>
