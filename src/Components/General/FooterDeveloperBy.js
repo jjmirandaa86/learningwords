@@ -2,12 +2,15 @@ import React from "react";
 
 const FooterDeveloperBy = () => {
 	return (
-		<div>
-			Developer by:{" "}
-			<a href="http://www.acertijo.dev" target="_blank">
-				Jefferson Miranda {"✌️"}
-			</a>
-		</div>
+		<>
+			<div style={{ fontSize: "12px" }}>
+				Developer by:
+				<a href="http://www.acertijo.dev" target="_blank">
+					{" "}
+					Jeff Miranda {"✌️"}
+				</a>
+			</div>
+		</>
 	);
 };
 

@@ -10,8 +10,8 @@ const UpperCase = (str) => str.toUpperCase();
 const LowerCase = (str) => str.toLowerCase();
 
 /*------------ H O U R S -------------*/
-const LongHour = () => moment().format("MMMM Do YYYY, h:mm:ss a");
-
+const LongHour = () => moment().format("lll");
+//moment().format('lll');
 const LastHours = () => moment().startOf("hour").fromNow();
 
 const LastSeconds = () => moment().startOf("minute").fromNow();

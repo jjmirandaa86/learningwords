@@ -11,16 +11,16 @@ const Footer = () => {
 	}, 1000);
 
 	return (
-		<div>
-			<Container>
-				<Navbar fixed="bottom" bg="light" data-bs-theme="light">
-					<div className="w-100 p-3 float-left">
+		<>
+			<Navbar bg="dark" data-bs-theme="dark" fixed="bottom">
+				<Container className={"text-white"}>
+					<div className="">
 						<FooterDeveloperBy />
 					</div>
-					<div className="w-100 p-3">{date}</div>
-				</Navbar>
-			</Container>
-		</div>
+					<div style={{ fontSize: "12px" }}>{date} </div>
+				</Container>
+			</Navbar>
+		</>
 	);
 };
 
