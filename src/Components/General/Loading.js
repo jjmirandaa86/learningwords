@@ -1,22 +1,19 @@
 import React from "react";
-import {
-	styleBlue,
-	styleBlack,
-	styleOrange,
-	styleYellow,
-	styleWhite,
-} from "../../Styles/generalStyles";
 import { Spinner } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { LowerCase } from "../../javascript/generalFunctions";
 
 const Loading = () => {
+	const { orangeBot } = useSelector((state) => state.general.appearance.color);
+
 	return (
-		<div style={{ textAlign: "center" }}>
+		<div className="text-center">
 			<div>Loading...</div>
 			<div>
-				<Spinner animation="grow" variant={"warning"} />
-				<Spinner animation="grow" variant={"warning"} />
-				<Spinner animation="grow" variant={"warning"} />
-				<Spinner animation="grow" variant={"warning"} />
+				<Spinner animation="grow" variant={LowerCase(orangeBot)} />
+				<Spinner animation="grow" variant={LowerCase(orangeBot)} />
+				<Spinner animation="grow" variant={LowerCase(orangeBot)} />
+				<Spinner animation="grow" variant={LowerCase(orangeBot)} />
 			</div>
 		</div>
 	);

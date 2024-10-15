@@ -1,20 +1,19 @@
 import React from "react";
 import { FaBookReader } from "react-icons/fa";
-import {
-	styleBlue,
-	styleOrange,
-	styleBlack,
-	styleWhite,
-	styleYellow,
-} from "../../Styles/generalStyles";
+import { useSelector } from "react-redux";
 
 const Logo = () => {
+	const { orangeHex } = useSelector((state) => state.general.appearance.color);
+
 	return (
-		<div className="p-1 h1 text-center">
-			<span>
-				<FaBookReader size={25} color={styleOrange} /> <strong>Learning</strong>
-				<>Words</>
-			</span>
+		<div className="p-1 text-center">
+			<h1>
+				<span>
+					<FaBookReader size={"25px"} color={orangeHex} />
+					<strong>Learning</strong>
+					<>Words</>
+				</span>
+			</h1>
 		</div>
 	);
 };

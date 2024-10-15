@@ -3,10 +3,11 @@ import PieChart from "../Graphics/PieChart";
 
 const KpiLearnWords = () => {
 	return (
-		<div>
+		<div style={{}}>
 			<PieChart></PieChart>
 		</div>
 	);
 };
 
 export default KpiLearnWords;
+//position: "absolute", alignContent: "center"

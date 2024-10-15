@@ -28,7 +28,7 @@ const OnlyWords = ({ list, title }) => {
 				bg={"dark"}
 				text={"dark" === "light" ? "dark" : "white"}
 				border="warning"
-				className="border-5"
+				className="border-1"
 			>
 				<Card.Body>
 					<Card.Title>
@@ -61,7 +61,6 @@ const OnlyWords = ({ list, title }) => {
 					) : (
 						""
 					)}
-
 					<PaginationControl />
 				</Card.Body>
 			</Card>
@@ -82,16 +81,21 @@ const OnlyCategory = ({ list, title }) => {
 
 	return (
 		<>
-			<Card>
+			<Card
+				bg={"dark"}
+				text={"dark" === "light" ? "dark" : "white"}
+				border="warning"
+				className="border-1"
+			>
 				<Card.Body>
 					<Card.Title>
-						<FaRectangleList /> {title}
+						<FaRectangleList color={styleOrange} /> {title}
 					</Card.Title>
 					{list.length === 0 ? "No items" : ""}
 					{list.length !== 0 ? (
-						<ListGroup variant="flush">
+						<ListGroup variant="dark">
 							{list.map((item, index) => (
-								<ListGroup.Item key={index} action onClick={() => {}}>
+								<ListGroup.Item action variant="" onClick={() => {}} key={index}>
 									<Row>
 										<Col xs={2} sm={1}>
 											<FaStar />

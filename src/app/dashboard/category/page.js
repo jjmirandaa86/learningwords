@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import NavigationHeader from "../../../Components/General/NavigationHeader";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import ListGrid from "../../../Components/General/ListGrid";
 
 const page = () => {
@@ -39,18 +38,15 @@ const page = () => {
 
 	return (
 		<>
-			<NavigationHeader />
-			<Container>
+			<Row>
 				<Row>
-					<Row>
-						<Col sm={8}>
-							<ListGrid list={list} title="List Category" type={type} />
-						</Col>
-					</Row>
-					<Col></Col>
-					<Col xs sm={4}></Col>
+					<Col sm={8}>
+						<ListGrid list={list} title="List Category" type={type} />
+					</Col>
 				</Row>
-			</Container>
+				<Col></Col>
+				<Col xs sm={4}></Col>
+			</Row>
 		</>
 	);
 };

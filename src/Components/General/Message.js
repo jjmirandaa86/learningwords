@@ -2,21 +2,21 @@ import React, { useEffect, useState } from "react";
 import { Toast, ToastContainer } from "react-bootstrap";
 import { LastSeconds } from "../../javascript/generalFunctions";
 import { LowerCase } from "../../javascript/generalFunctions";
+import { useSelector } from "react-redux";
 
 const Message = ({ typeMessage, title, body }) => {
-	//typeMessage
-	//Informative Dark
-	//Error       Danger
-	//Success     Success
+	const { colorError, colorSuccess, colorInfo } = useSelector(
+		(state) => state.general.appearance.toast,
+	);
 
 	const [show, setShow] = useState(true);
-	const [color, setColor] = useState("Dark");
+	const [color, setColor] = useState(colorInfo);
 	const [date, setDate] = useState(LastSeconds);
 
 	useEffect(() => {
-		if (LowerCase(typeMessage) === "informative") setColor("Dark");
-		if (LowerCase(typeMessage) === "error") setColor("Danger");
-		if (LowerCase(typeMessage) === "success") setColor("Success");
+		if (LowerCase(typeMessage) === "informative") setColor(colorInfo);
+		if (LowerCase(typeMessage) === "error") setColor(colorError);
+		if (LowerCase(typeMessage) === "success") setColor(colorSuccess);
 	}, [typeMessage]);
 
 	return (
