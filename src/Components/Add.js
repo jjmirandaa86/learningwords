@@ -71,141 +71,171 @@ const Add = () => {
 						<Card.Body>
 							<Card.Title>New word</Card.Title>
 							<Form>
-								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-									<Form.Label>Id:</Form.Label>
-									<Form.Control type="text" disabled readOnly value={data.id} />
-								</Form.Group>
-								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-									<Form.Label>Type: </Form.Label>
-									<Form.Select
-										aria-label="Default select example"
-										defaultValue={"NO"}
-										onChange={handleChange}
-										name={"type"}
-										value={form.type}
-									>
-										<option>Choose one</option>
-										<option value="NO">Noun</option>
-										<option value="VE">Verb</option>
-										<option value="CO">Connector</option>
-									</Form.Select>
-								</Form.Group>
-								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-									<Form.Label>Category: </Form.Label>
-									<Form.Select
-										aria-label="Default select example"
-										onChange={handleChange}
-										name={"category"}
-										value={form.category}
-									>
-										<option>Choose one</option>
-										<option value="1">Basic English</option>
-										<option value="2">Office</option>
-										<option value="3">Places</option>
-										<option value="3">Computer</option>
-									</Form.Select>
-								</Form.Group>
-								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-									<Form.Label>Word:</Form.Label>
-									<Form.Control
-										type="text"
-										onChange={handleChange}
-										value={form.word}
-										name={"word"}
-									/>
-									<Form.Control.Feedback type="invalid">
-										Please choose a username.
-									</Form.Control.Feedback>
-								</Form.Group>
-								<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-									<Form.Label>Meaning:</Form.Label>
-									<Container>
-										<Button type="button">+</Button>
-										<Row>
-											{/* ADD DATA*/}
-											<Col>
-												<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-													<Form.Label>Meaning:</Form.Label>
-													<Form.Control type="text" value={data.meanings.meaning} />
-												</Form.Group>
-												<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-													<Form.Label>Example:</Form.Label>
-													<Form.Control type="text" />
-												</Form.Group>
-												<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-													<Form.Label>Synonyms:</Form.Label>
-													<Form.Control type="text" value={data.word} />
-												</Form.Group>
-												<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-													<Form.Label>Antonyms:</Form.Label>
-													<Form.Control type="text" value={data.word} />
-												</Form.Group>
-											</Col>
-											{/* SHOW DATA*/}
-											<Col>
-												{data.meanings.length > 0 &&
-													data.meanings.map((el, index) => (
-														<Accordion key={index}>
-															<Accordion.Item eventKey="0">
-																<Accordion.Header>{el.meaning}</Accordion.Header>
-																<Accordion.Body>
-																	<ListGroup>
-																		{el.examples.map((el2, index) => (
-																			<ListGroup.Item key={index}>
-																				{index + 1}
-																				{" - "} {el2}{" "}
-																			</ListGroup.Item>
-																		))}
-																		<Row>
-																			<Col>
-																				{el.synonyms.map((el3, index) => (
-																					<ol key={index}>{el3} </ol>
+								<Row>
+									<Col>
+										<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+											<Form.Label>Type: </Form.Label>
+											<Form.Select
+												aria-label="Default select example"
+												defaultValue={"NO"}
+												onChange={handleChange}
+												name={"type"}
+												value={form.type}
+											>
+												<option>Choose one</option>
+												<option value="NO">Noun</option>
+												<option value="VE">Verb</option>
+												<option value="CO">Connector</option>
+											</Form.Select>
+										</Form.Group>
+									</Col>
+									<Col>
+										<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+											<Form.Label>Category: </Form.Label>
+											<Form.Select
+												aria-label="Default select example"
+												onChange={handleChange}
+												name={"category"}
+												value={form.category}
+											>
+												<option>Choose one</option>
+												<option value="1">Basic English</option>
+												<option value="2">Office</option>
+												<option value="3">Places</option>
+												<option value="3">Computer</option>
+											</Form.Select>
+										</Form.Group>
+									</Col>
+									<Col xs={12} md={6}>
+										<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+											<Form.Label>Word:</Form.Label>
+											<Form.Control
+												type="text"
+												onChange={handleChange}
+												value={form.word}
+												name={"word"}
+											/>
+											<Form.Control.Feedback type="invalid">
+												Please choose a username.
+											</Form.Control.Feedback>
+										</Form.Group>
+									</Col>
+								</Row>
+								<Row>
+									<Col>
+										<Form.Label>Word:</Form.Label>
+									</Col>
+								</Row>
+								<Row>
+									<Col>
+										<Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+											<Form.Label>Meaning:</Form.Label>
+											<Container>
+												<Row>
+													{/* ADD DATA*/}
+													<Col>
+														<Form.Group
+															className="mb-3"
+															controlId="exampleForm.ControlInput1"
+														>
+															<Form.Label>Meaning:</Form.Label>
+															<Form.Control type="text" value={data.meanings.meaning} />
+														</Form.Group>
+														<Form.Group
+															className="mb-3"
+															controlId="exampleForm.ControlInput1"
+														>
+															<Form.Label>Example:</Form.Label>
+															<Form.Control type="text" />
+														</Form.Group>
+														<Row>
+															<Col>
+																<Form.Group
+																	className="mb-3"
+																	controlId="exampleForm.ControlInput1"
+																>
+																	<Form.Label>Synonyms:</Form.Label>
+																	<Form.Control type="text" value={data.word} />
+																</Form.Group>
+															</Col>
+															<Col>
+																<Form.Group
+																	className="mb-3"
+																	controlId="exampleForm.ControlInput1"
+																>
+																	<Form.Label>Antonyms:</Form.Label>
+																	<Form.Control type="text" value={data.word} />
+																</Form.Group>
+															</Col>
+														</Row>
+														<Button type="button">+</Button>
+													</Col>
+													{/* SHOW DATA*/}
+													<Col>
+														{data.meanings.length > 0 &&
+															data.meanings.map((el, index) => (
+																<Accordion key={index}>
+																	<Accordion.Item eventKey="0">
+																		<Accordion.Header>{el.meaning}</Accordion.Header>
+																		<Accordion.Body>
+																			<ListGroup>
+																				{el.examples.map((el2, index) => (
+																					<ListGroup.Item key={index}>
+																						{index + 1}
+																						{" - "} {el2}{" "}
+																					</ListGroup.Item>
 																				))}
-																			</Col>
-																			<Col>
-																				{el.antonyms.map((el3, index) => (
-																					<ol key={index}>{el3} </ol>
-																				))}
-																			</Col>
-																		</Row>
-																	</ListGroup>
-																</Accordion.Body>
-															</Accordion.Item>
-														</Accordion>
-													))}
-											</Col>
-										</Row>
-									</Container>
-								</Form.Group>
-
-								<Form.Group controlId="formFile" className="mb-3">
-									<Form.Label>Image:</Form.Label>
-									<Form.Control
-										type="file"
-										onChange={handleChange}
-										name={"image"}
-										value={form.image}
-									/>
-									<Image
-										src={form.image}
-										width={100}
-										height={100}
-										alt={form.category}
-										rounded
-									/>
-								</Form.Group>
-								<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-									<Form.Label>Status: </Form.Label>
-									<Form.Select
-										aria-label="Default select example"
-										onChange={handleChange}
-										name={"status"}
-										value={form.status}
-									>
-										<option value="F">Favorite</option>
-										<option value="P">Pendent</option>
-									</Form.Select>
-								</Form.Group>
+																				<Row>
+																					<Col>
+																						{el.synonyms.map((el3, index) => (
+																							<ol key={index}>{el3} </ol>
+																						))}
+																					</Col>
+																					<Col>
+																						{el.antonyms.map((el3, index) => (
+																							<ol key={index}>{el3} </ol>
+																						))}
+																					</Col>
+																				</Row>
+																			</ListGroup>
+																		</Accordion.Body>
+																	</Accordion.Item>
+																</Accordion>
+															))}
+													</Col>
+												</Row>
+											</Container>
+										</Form.Group>
+									</Col>
+								</Row>
+								<Row>
+									<Col>
+										<Form.Group controlId="formFile" className="mb-3">
+											<Form.Label>Image:</Form.Label>
+											<Form.Control
+												type="file"
+												onChange={handleChange}
+												name={"image"}
+												value={form.image}
+											/>
+											<Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+												<Form.Label>Status: </Form.Label>
+												<Form.Select
+													aria-label="Default select example"
+													onChange={handleChange}
+													name={"status"}
+													value={form.status}
+												>
+													<option value="F">Favorite</option>
+													<option value="P">Pendent</option>
+												</Form.Select>
+											</Form.Group>
+										</Form.Group>
+									</Col>
+									<Col sm={6}>
+										<Image src={form.image} width={"50%"} alt={form.category} rounded />
+									</Col>
+								</Row>
 							</Form>
 							<Button variant="primary">Save</Button>
 						</Card.Body>

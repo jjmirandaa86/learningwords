@@ -1,6 +1,8 @@
 import { exit } from "process";
 import React, { useState } from "react";
-
+import { useSelector, useDispatch } from "react-redux";
+import { changeMessage } from "../Redux/Reducer/generalReducer";
+import { Hour, Date } from "../javascript/generalFunctions";
 export const useLoginHook = () => {
 	const defaultValueForm = { username: "", password: "" };
 	const defaultValueErrors = {};
@@ -9,6 +11,8 @@ export const useLoginHook = () => {
 	const [errors, setErrors] = useState(defaultValueErrors);
 	const [validated, setValidated] = useState(false);
 	const [login, setLogin] = useState(null);
+
+	const dispatch = useDispatch();
 
 	const handleChange = (event) => {
 		event.preventDefault();
@@ -38,8 +42,19 @@ export const useLoginHook = () => {
 
 	const handleLogin = (event) => {
 		validateForm();
-		if (validated) setLogin({});
-		else return;
+		if (validated) {
+			dispatch(
+				changeMessage({
+					active: true,
+					title: "Login",
+					msg: "Login successfully",
+					typeColor: "S",
+					hour: Hour(),
+					date: Date(),
+				}),
+			);
+			setLogin({});
+		} else return;
 	};
 
 	return {
