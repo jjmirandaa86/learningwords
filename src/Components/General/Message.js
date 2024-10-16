@@ -10,10 +10,10 @@ const Message = () => {
 		(state) => state.general.appearance.toast,
 	);
 
-	const { title, msg, typeColor, hour, date } = useSelector(
+	const { active, title, msg, typeColor, hour, date } = useSelector(
 		(state) => state.general.message,
 	);
-	const [show, setShow] = useState(true);
+	const [show, setShow] = useState(active);
 	const [color, setColor] = useState(colorInfo);
 
 	const dispatch = useDispatch();
@@ -28,6 +28,7 @@ const Message = () => {
 		dispatch(resetMessage());
 		setShow(false);
 	};
+
 	return (
 		<div>
 			<ToastContainer position="top-end" style={{ zIndex: 1 }}>

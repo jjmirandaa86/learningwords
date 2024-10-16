@@ -12,11 +12,7 @@ import { Provider } from "react-redux";
 const RootLayout = ({ children }) => {
 	return (
 		<>
-			<Message
-				typeMessage={"success"}
-				title={"Login"}
-				body={"Login successful!"}
-			/>
+			<Message />
 			<div
 				style={{
 					height: "100vh",
