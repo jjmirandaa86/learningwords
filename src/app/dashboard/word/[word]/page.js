@@ -2,9 +2,11 @@
 
 import React from "react";
 import Word from "../../../../Components/Word";
+import data from "../../../../app/data";
 
 const Page = ({ params }) => {
-	return <Word word={params.word} />;
+	const word = data.filter((el) => el.word === params.word);
+	return <Word data={word[0]} />;
 };
 
 export default Page;

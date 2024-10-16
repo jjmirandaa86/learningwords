@@ -1,5 +1,13 @@
 import React from "react";
-import { Card, Row, Col, Container, Image, Form } from "react-bootstrap";
+import {
+	Card,
+	Row,
+	Col,
+	Container,
+	Image,
+	Form,
+	Accordion,
+} from "react-bootstrap";
 import {
 	FirstLetterUpperCase,
 	UpperCase,
@@ -14,37 +22,21 @@ import {
 	styleYellow,
 	styleWhite,
 } from "../Styles/generalStyles";
+import Meanings from "./Words/Meanings";
+import Synonyms from "./Words/Synonyms";
 
-const Word = ({ word = null }) => {
-	const data = {
-		id: 1,
-		type: "NOUN",
-		category: "Basic English",
-		word: "House",
-		meaning: "It is a place where people live",
-		example: [
-			"The house is beautiful.",
-			"This house is mine.",
-			"I prefer staying in my house.",
-		],
-		pronunciation: "ssdsdd",
-		synonyms: [],
-		antonyms: [],
-		img: "https://img.freepik.com/vector-gratis/hermosa-casa_24877-50819.jpg",
-		status: "F",
-	};
-
+const Word = ({ data = {} }) => {
 	return (
 		<Container>
 			<Card>
 				<Card.Body>
 					<Card.Title>
 						<Row>
-							<Col>
-								<h5>{FirstLetterUpperCase(data.category)}</h5>
+							<Col xs={9}>
+								<h6>{FirstLetterUpperCase(`${data.category}`)}</h6>
 							</Col>
 							<Col style={{ textAlign: "end" }}>
-								<h5>{FirstLetterUpperCase(data.type)}</h5>
+								<h6>{FirstLetterUpperCase(`${data.type}`)}</h6>
 							</Col>
 						</Row>
 						<Row>
@@ -58,7 +50,7 @@ const Word = ({ word = null }) => {
 								</h1>
 							</Col>
 							<Col xs={8} style={{ textAlign: "center" }}>
-								<h1>{UpperCase(word)}</h1>
+								<h1>{UpperCase(`${data.word}`)}</h1>
 							</Col>
 							<Col style={{ textAlign: "end" }}>
 								<h1>
@@ -67,48 +59,32 @@ const Word = ({ word = null }) => {
 							</Col>
 						</Row>
 					</Card.Title>
+
 					<div style={{ textAlign: "center" }}>
-						<Image src={data.img} rounded style={{ width: "90%" }} />
+						<Row>
+							<Col xs={8} sm={7} md={5} lg={5}>
+								<div style={{ display: "block", margin: "auto" }}>
+									<Image
+										src={data.image}
+										style={{ width: "90%" }}
+										alt={`${data.word} - ${data.category}`}
+										rounded
+									/>
+								</div>
+							</Col>
+							<Col>
+								<Accordion>
+									{data.meanings.map((el, index) => {
+										return (
+											<>
+												<Meanings key={index} data={el} index={index} />
+											</>
+										);
+									})}
+								</Accordion>
+							</Col>
+						</Row>
 					</div>
-					<h3>
-						<strong>{data.meaning}</strong>
-					</h3>
-					{/* EXAMPLES */}
-					<h4>
-						<ul>
-							{data.example.map((example, index) => (
-								<li key={index}>
-									<h6>{example}</h6>
-								</li>
-							))}
-						</ul>
-					</h4>
-					<Row>
-						{/* SYNONYMS */}
-						<Col>
-							<h4>
-								<ul>
-									{data.synonyms.map((el, index) => (
-										<li key={index}>
-											<h6>{el}</h6>
-										</li>
-									))}
-								</ul>
-							</h4>
-						</Col>
-						{/* ANTONYMS */}
-						<Col>
-							<h4>
-								<ul>
-									{data.antonyms.map((el, index) => (
-										<li key={index}>
-											<h6>{el}</h6>
-										</li>
-									))}
-								</ul>
-							</h4>
-						</Col>
-					</Row>
 				</Card.Body>
 			</Card>
 		</Container>
