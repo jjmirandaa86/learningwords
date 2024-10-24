@@ -1,27 +1,27 @@
 import React from "react";
-import { Card, ListGroup, Button, Row, Col } from "react-bootstrap";
+import { Card, ListGroup, Row, Col } from "react-bootstrap";
 import { FaRectangleList } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import PaginationControl from "./PaginationControl.js";
-import {
-	styleBlue,
-	styleBlack,
-	styleOrange,
-	styleYellow,
-	styleWhite,
-} from "../../Styles/generalStyles.js";
 import { FirstLetterUpperCase } from "../../javascript/generalFunctions.js";
+import { useSelector } from "react-redux";
 
 const ListGrid = ({ list = [], title = "", type = "w" }) => {
+	const { orangeHex } = useSelector((state) => state.general.appearance.color);
+
 	return (
 		<>
-			{type === "w" && <OnlyWords list={list} title={title} />}
-			{type === "c" && <OnlyCategory list={list} title={title} />}
+			{type === "w" && (
+				<OnlyWords orangeHex={orangeHex} list={list} title={title} />
+			)}
+			{type === "c" && (
+				<OnlyCategory orangeHex={orangeHex} list={list} title={title} />
+			)}
 		</>
 	);
 };
 
-const OnlyWords = ({ list, title }) => {
+const OnlyWords = ({ list, title, orangeHex }) => {
 	return (
 		<>
 			<Card
@@ -32,7 +32,7 @@ const OnlyWords = ({ list, title }) => {
 			>
 				<Card.Body>
 					<Card.Title>
-						<FaRectangleList color={styleOrange} /> {title}
+						<FaRectangleList color={orangeHex} /> {title}
 					</Card.Title>
 					{list.length === 0 ? "No items" : ""}
 					{list.length !== 0 ? (
@@ -48,7 +48,7 @@ const OnlyWords = ({ list, title }) => {
 									<Row>
 										<Col xs={2} sm={1}>
 											<h5>
-												<FaStar color={styleOrange} />
+												<FaStar color={orangeHex} />
 											</h5>
 										</Col>
 										<Col xs={10} sm={11}>
@@ -68,7 +68,7 @@ const OnlyWords = ({ list, title }) => {
 	);
 };
 
-const OnlyCategory = ({ list, title }) => {
+const OnlyCategory = ({ list, title, orangeHex }) => {
 	//Filter unique category
 	//type === "c" ?
 	const result = [];
@@ -89,7 +89,7 @@ const OnlyCategory = ({ list, title }) => {
 			>
 				<Card.Body>
 					<Card.Title>
-						<FaRectangleList color={styleOrange} /> {title}
+						<FaRectangleList color={orangeHex} /> {title}
 					</Card.Title>
 					{list.length === 0 ? "No items" : ""}
 					{list.length !== 0 ? (

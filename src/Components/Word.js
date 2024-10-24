@@ -1,13 +1,5 @@
 import React from "react";
-import {
-	Card,
-	Row,
-	Col,
-	Container,
-	Image,
-	Form,
-	Accordion,
-} from "react-bootstrap";
+import { Card, Row, Col, Container, Image, Accordion } from "react-bootstrap";
 import {
 	FirstLetterUpperCase,
 	UpperCase,
@@ -15,20 +7,15 @@ import {
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { HiSpeakerWave } from "react-icons/hi2";
 import { HiOutlineSpeakerWave } from "react-icons/hi2";
-import {
-	styleBlue,
-	styleBlack,
-	styleOrange,
-	styleYellow,
-	styleWhite,
-} from "../Styles/generalStyles";
 import Meanings from "./Words/Meanings";
-import Synonyms from "./Words/Synonyms";
+import { useSelector } from "react-redux";
 
 const Word = ({ data = {} }) => {
+	const { orangeHex } = useSelector((state) => state.general.appearance.color);
+
 	return (
 		<Container>
-			<Card>
+			<Card key={data.id}>
 				<Card.Body>
 					<Card.Title>
 						<Row>
@@ -43,7 +30,7 @@ const Word = ({ data = {} }) => {
 							<Col style={{ textAlign: "start" }}>
 								<h1>
 									{data.pronunciation !== "" ? (
-										<HiSpeakerWave color={styleOrange} />
+										<HiSpeakerWave color={orangeHex} />
 									) : (
 										<HiOutlineSpeakerWave />
 									)}
@@ -54,7 +41,7 @@ const Word = ({ data = {} }) => {
 							</Col>
 							<Col style={{ textAlign: "end" }}>
 								<h1>
-									{data.status === "F" ? <FaStar color={styleOrange} /> : <FaRegStar />}
+									{data.status === "F" ? <FaStar color={orangeHex} /> : <FaRegStar />}
 								</h1>
 							</Col>
 						</Row>
@@ -74,13 +61,9 @@ const Word = ({ data = {} }) => {
 							</Col>
 							<Col>
 								<Accordion>
-									{data.meanings.map((el, index) => {
-										return (
-											<>
-												<Meanings key={index} data={el} index={index} />
-											</>
-										);
-									})}
+									{data.meanings.map((el, index) => (
+										<Meanings key={index} data={el} index={index} />
+									))}
 								</Accordion>
 							</Col>
 						</Row>

@@ -11,17 +11,17 @@ const Meanings = ({ data, index }) => {
 				{data.id}
 				{" - "} {data.meaning}
 			</Accordion.Header>
-			<Accordion.Body>
-				<Examples data={data.examples} />
+			<Accordion.Body style={{ textAlign: "left" }}>
+				<Examples key={index} index={index} data={data.examples} />
 				<Row>
 					<Col></Col>
-					<Col className="m-2">
+					<Col className="m-1">
 						<strong>{"Synonyms"}</strong>
-						<Synonyms data={data.synonyms} />
+						<Synonyms key={index} data={data.synonyms} />
 					</Col>
-					<Col className="m-2">
+					<Col className="m-1">
 						<strong>{"Antonyms"}</strong>
-						<Antonyms data={data.antonyms} />
+						<Antonyms key={index} data={data.antonyms} />
 					</Col>
 					<Col></Col>
 				</Row>

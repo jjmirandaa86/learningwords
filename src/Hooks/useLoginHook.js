@@ -1,6 +1,5 @@
-import { exit } from "process";
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { changeMessage } from "../Redux/Reducer/generalReducer";
 import { Hour, Date } from "../javascript/generalFunctions";
 export const useLoginHook = () => {
@@ -41,6 +40,7 @@ export const useLoginHook = () => {
 	};
 
 	const handleLogin = (event) => {
+		event.preventDefault();
 		validateForm();
 		if (validated) {
 			dispatch(

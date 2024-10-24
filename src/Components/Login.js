@@ -3,7 +3,7 @@ import { Container, Form, Button, Row, Col, Card } from "react-bootstrap";
 import Logo from "../Components/General/Logo";
 import FooterDeveloperBy from "../Components/General/FooterDeveloperBy";
 import { FaBookReader } from "react-icons/fa";
-import { useLoginHook } from "../Controller/useLoginHook";
+import { useLoginHook } from "../Hooks/useLoginHook";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 

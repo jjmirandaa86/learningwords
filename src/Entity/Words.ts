@@ -1,7 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm"
 
 @Entity()
-export class Words {
+export class Words extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id: number
@@ -10,19 +10,19 @@ export class Words {
     idCategory: number
 
     @Column()
+    type: number
+
+    @Column()
     word: string
 
     @Column()
-    meaning: string
-
-    @Column()
-    examples: Array<string>
-
-    @Column()
-    association: Array<number>
+    meaning: number
 
     @Column()
     image: string
+
+    @Column()
+    sound: string
 
     @Column()
     status: boolean

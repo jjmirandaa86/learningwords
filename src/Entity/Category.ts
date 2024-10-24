@@ -1,14 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm"
 
 @Entity()
-export class Category {
+export class Category extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @Column({
+        length: 100,
+    })
     name: string
 
-    @Column()
-    isActive: boolean
+    @Column({
+        length: 1,
+    })
+    isActive: boolean //A: Active P: Passive 
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Toast, ToastContainer } from "react-bootstrap";
-import { LastSeconds } from "../../javascript/generalFunctions";
 import { LowerCase } from "../../javascript/generalFunctions";
 import { useSelector, useDispatch } from "react-redux";
 import { resetMessage } from "../../Redux/Reducer/generalReducer";

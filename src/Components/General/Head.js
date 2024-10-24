@@ -1,17 +1,9 @@
 import React from "react";
-import {
-	Container,
-	Navbar,
-	Offcanvas,
-	Nav,
-	NavDropdown,
-	Form,
-	Button,
-} from "react-bootstrap";
+import { Container, Navbar, Offcanvas, Nav } from "react-bootstrap";
 import Logo from "../General/Logo";
 import Menu from "../General/Menu";
 
-const Head = ({ user }) => {
+const Head = ({ user = "" }) => {
 	const expand = false;
 	return (
 		<>
@@ -40,7 +32,7 @@ const Head = ({ user }) => {
 						<Offcanvas.Body>
 							<Nav className="justify-content-end flex-grow-1 pe-3">
 								<span>
-									<strong>Signed in as:</strong> <em href="#login">Mark Otto</em>
+									<strong>Signed in as:</strong> <em href="#login"> {user} </em>
 								</span>
 								<Menu />
 							</Nav>

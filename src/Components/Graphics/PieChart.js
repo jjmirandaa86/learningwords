@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import { Pie } from "react-chartjs-2";
@@ -41,6 +41,22 @@ const PieChart = () => {
 			},
 		],
 	});
+
+	useEffect(() => {
+		setChartData({
+			labels: Data.map((data) => data.status),
+			datasets: [
+				{
+					label: "Status ",
+					data: Data.map((data) => data.countWords),
+					backgroundColor: ["#50AF95", "#f3ba2f", "#2a71d0"],
+					borderColor: "black",
+					borderWidth: 2,
+					height: "200",
+				},
+			],
+		});
+	}, []);
 
 	const options = {
 		plugins: {

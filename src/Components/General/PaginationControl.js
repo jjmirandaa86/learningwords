@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination } from "react-bootstrap";
 
-const PaginationControl = ({ data }) => {
+const PaginationControl = () => {
 	return (
 		<div className="p-2">
 			<div style={{ fontSize: "12px" }} className="p-1">

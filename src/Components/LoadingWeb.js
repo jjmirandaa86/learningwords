@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Loading from "./General/Loading";
 import Logo from "./General/Logo";
 import { Container, Row, Col, Navbar, Image } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
-import { useLoadingWebHook } from "../Controller/useLoadingWebHook";
+import { useLoadingWebHook } from "../Hooks/useLoadingWebHook";
 import { useSelector } from "react-redux";
 
 const LoadingWeb = () => {
